@@ -1,0 +1,13 @@
+# To ensure app dependencies are ported from your virtual environment/host machine into your container, run 'pip freeze > requirements.txt' in the terminal to overwrite this file
+django
+gunicorn==21.2.0
+mysqlclient
+celery
+django-celery-beat
+redis
+python-dotenv
+crispy-bootstrap5
+django_celery_results
+requests
+ping3
+pillow

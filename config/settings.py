@@ -85,12 +85,8 @@ WSGI_APPLICATION = 'config.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'latency_monitoring_website_db',
-        'USER': 'root',
-        'PASSWORD': 'root',
-        'HOST': 'localhost',
-        'PORT': '3306',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR.joinpath('db.sqlite3'),
     }
 }
 
@@ -143,7 +139,7 @@ MEDIA_ROOT = BASE_DIR.joinpath('media')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # celery configuration
-CELERY_BROKER_URL = "redis://127.0.0.1:6379/"
+CELERY_BROKER_URL = 'redis://redis:6379'
 CELERY_RESULT_BACKEND = "django-db"
 CELERY_RESULT_EXTENDED = True
 CELERY_IMPORTS = ('monitoring.tasks',)
